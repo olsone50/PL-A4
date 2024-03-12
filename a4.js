@@ -43,7 +43,9 @@ var flatten = function (lsts)
 var compose = function (lst)
 {
 
-    /* to be completed */
+    return fp.reduceRight(function (x, a) { return x; },
+        lst,
+        0);
     
 };
 
@@ -52,8 +54,12 @@ var maxOfMins = function (lsts)
     var mapper =
         1; /* delete and replace this line */   
 
-    var reducer =
-        2; /* delete and replace this line */
+    var reducer = function (x, y) {
+        if (fp.isGT(x, y))
+            return x;
+        else
+            return y;
+    }
 
     return fp.reduce(
         reducer,       
