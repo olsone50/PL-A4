@@ -43,9 +43,9 @@ var flatten = function (lsts)
 var compose = function (lst)
 {
 
-    return fp.reduceRight(function (x, a) { return x; },
+    return fp.reduceRight(function (x, a) { return fp.compose(x, a); },
         lst,
-        0);
+        function (x) { return x; });
     
 };
 
