@@ -9,7 +9,7 @@ if (!exports) {
 
 /////////////////////// define the test suite /////////////////////////
 var tests = [
-    /*  0 */ "filter( function (x) {return fp.isGT(x,4);}, [1,2,3,4,5,6,7,8,9] )",
+    /*  0 */ "filter( function (x) {return fp.isGT(x, 4);}, [1,2,3,4,5,6,7,8,9] )",
     /*  1 */ "map( function (x) {return fp.add(x, 5);}, [1,2,3,4,5,6] )",
     /*  2 */ "flatten( [[1,2,3],[4,5],[6],[],[7,8,9]] )",
     /*  3 */ "compose(fp.makeList( function (x) { return fp.add(x,3); }, function (x) { return fp.mul(x, x); }, function (x) { return fp.add(x, 2); } )) (3) ",  

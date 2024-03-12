@@ -15,8 +15,8 @@ if ( ! exports ) {
 var filter = function (pred,lst)
 {
 
-    return fp.reduce(function (a, x) {
-        if (pred(x)) return fp.cons(fp.hd(lst), a);
+    return fp.reduceRight(function (x, a) {
+        if (pred(x)) return fp.cons(x, a);
         else return a; },
         lst,
         []);
@@ -27,7 +27,9 @@ var filter = function (pred,lst)
 var map = function (f,lst)
 {
 
-    return fp.reduceRight(function (x, a) { return fp.cons(f(x), a); }, lst, []);
+    return fp.reduceRight(function (x, a) { return fp.cons(f(x), a); },
+        lst,
+        []);
     
 };
 
