@@ -1,11 +1,11 @@
-var fileName = 'a3';
+var fileName = 'a4';
 var selectedTest = process.argv[2];
 var solution; // student's solution code
 
 /////////////////////// define the test suite /////////////////////////
 var tests = [
-    /*  0 */ "filter( [1,2,3],3 )",
-    /*  1 */ "map( [1,2,3],5 )",
+    /*  0 */ "filter( function (x) {return fp.isGT(n,4);}, [1,2,3,4,5,6,7,8,9] )",
+    /*  1 */ "map( function (x) {return fp.add(n, 5);}, [1,2,3,4,5,6] )",
     /*  2 */ "flatten( [[1,2,3],[4,5],[6],[],[7,8,9]] )",
     /*  3 */ "compose(fp.makeList( function (x) { return fp.add(x,3); }, function (x) { return fp.mul(x, x); }, function (x) { return fp.add(x, 2); } )) (3) ",  
     /*  4 */ "maxOfMins( [[1,2,-3],[4,5],[-6],[-7,8,-9]])",

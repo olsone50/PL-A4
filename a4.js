@@ -15,7 +15,9 @@ if ( ! exports ) {
 var filter = function (pred,lst)
 {
 
-    /* to be completed */
+    return reduce(function (x),
+        lst,
+        []);
 
 };
 
@@ -23,7 +25,7 @@ var filter = function (pred,lst)
 var map = function (f,lst)
 {
 
-    /* to be completed */
+    return reduce(f, lst, []);
     
 };
 
