@@ -17,7 +17,7 @@ var filter = function (pred,lst)
 
     return fp.reduce(function (a, x) {
         if (pred(x)) return fp.cons(fp.hd(lst), a);
-        else return a },
+        else return a; },
         lst,
         []);
 
@@ -27,7 +27,7 @@ var filter = function (pred,lst)
 var map = function (f,lst)
 {
 
-    return fp.reduce(function (a, x) {return fp.cons(f(x), a) }, lst, []);
+    return fp.reduceRight(function (x, a) { return fp.cons(f(x), a); }, lst, []);
     
 };
 
@@ -54,11 +54,9 @@ var maxOfMins = function (lsts)
         2; /* delete and replace this line */
 
     return fp.reduce(
-        3 /* delete and replace this line */
-        ,       
-        4 /* delete and replace this line */
-        ,       
-        5 /* delete and replace this line */
+        reducer,       
+        fp.map(mapper, lsts),       
+        fp.hd(fp.hd(lsts))
     );
 };
 
