@@ -35,9 +35,9 @@ var map = function (f,lst)
 
 var flatten = function (lsts)
 {
-
-    /* to be completed */
-    
+    return fp.reduceRight(function(list, acc) {
+        return fp.reduceRight(fp.cons, list, acc);
+    }, lsts, []);
 };
 
 var compose = function (lst)
