@@ -51,8 +51,9 @@ var compose = function (lst)
 
 var maxOfMins = function (lsts)
 {
-    var mapper =
-        1; /* delete and replace this line */   
+    var mapper = function(lsts) {
+        return fp.reduce(fp.min, lsts, fp.hd(lsts));
+    }  
 
     var reducer = function (x, y) {
         if (fp.isGT(x, y))
